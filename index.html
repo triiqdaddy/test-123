@@ -3,11 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BL Construction - Site Under Construction</title>
+  <title>BL Construction Limited</title>
   <style>
     body {
       margin: 0;
-      padding: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: linear-gradient(to right, #2c3e50, #3498db);
       color: #fff;
@@ -17,61 +16,91 @@
       justify-content: center;
       height: 100vh;
       text-align: center;
+      overflow: hidden;
     }
 
     h1 {
       font-size: 3em;
       margin-bottom: 0.5em;
+      animation: fadeInDown 1s ease-out;
     }
 
     p {
       font-size: 1.2em;
-      margin-bottom: 2em;
+      margin: 0.5em 0;
+      animation: fadeInUp 1.2s ease-out;
     }
 
-    .contact-box {
+    .contact {
+      margin-top: 2em;
       background-color: rgba(255, 255, 255, 0.1);
-      padding: 1.5em;
+      padding: 1em 2em;
       border-radius: 10px;
-      max-width: 400px;
-      width: 90%;
+      animation: fadeIn 2s ease-out;
     }
 
-    .contact-box h2 {
-      margin-bottom: 1em;
-      font-size: 1.5em;
+    .contact p {
+      margin: 0.3em 0;
     }
 
-    .contact-box a {
-      color: #f1c40f;
-      text-decoration: none;
+    .loader {
+      margin-top: 2em;
+      width: 60px;
+      height: 60px;
+      border: 6px solid #fff;
+      border-top: 6px solid #3498db;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
     }
 
-    .contact-box a:hover {
-      text-decoration: underline;
+    .hammer {
+      font-size: 4em;
+      margin-top: 1em;
+      animation: hammering 0.6s infinite ease-in-out;
+      transform-origin: bottom center;
     }
 
-    footer {
-      position: absolute;
-      bottom: 20px;
-      font-size: 0.9em;
-      color: #ccc;
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes hammering {
+      0% { transform: rotate(0deg); }
+      50% { transform: rotate(-30deg); }
+      100% { transform: rotate(0deg); }
     }
   </style>
 </head>
 <body>
   <h1>🚧 Site Under Construction 🚧</h1>
-  <p>We're working hard to bring you a brand new experience. Stay tuned!</p>
+  <p>We're working hard to bring you a new experience.</p>
+  <p>Please check back soon!</p>
 
-  <div class="contact-box">
-    <h2>Contact BL Construction</h2>
-    <p>Email: <a href="mailto:info@blconstruction.com">mplopi@blconstruction.co.zm</a></p>
-    <p>Phone: <a href="tel:+260971234567">+260 97 77 432 747</a></p>
-    <p>Address: Plot 10, Mwaleshi Road, Olympia, Lusaka</p>
+  <div class="hammer">🔨</div>
+
+  <div class="loader"></div>
+
+  <div class="contact">
+    <h2>Contact Us</h2>
+    <p><strong>Email:</strong> <a href="mailto:mplopi@blconstruction.co.zm" style="color:#fff;">mplopi@blconstruction.co.zm</a></p>
+    <p><strong>Phone:</strong> +260 977 7432747</p>
+    <p><strong>Address:</strong> Plot 10 Mwaleshi Road, Olympia, Lusaka</p>
   </div>
-
-  <footer>
-    &copy; 2025 BL Construction. All rights reserved.
-  </footer>
 </body>
 </html>
