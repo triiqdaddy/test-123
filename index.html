@@ -8,7 +8,7 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to right, #2c3e50, #3498db);
+      background: linear-gradient(to right, #ff6f00, #ff9800); /* Construction orange gradient */
       color: #fff;
       display: flex;
       flex-direction: column;
@@ -48,15 +48,15 @@
       width: 60px;
       height: 60px;
       border: 6px solid #fff;
-      border-top: 6px solid #3498db;
+      border-top: 6px solid #ff6f00;
       border-radius: 50%;
-      animation: spin 1s linear infinite;
+      animation: spin 1.5s linear infinite;
     }
 
     .hammer {
-      font-size: 4em;
+      font-size: 6em; /* Bigger hammer */
       margin-top: 1em;
-      animation: hammering 0.6s infinite ease-in-out;
+      animation: hammering 2s infinite ease-in-out; /* Slower animation */
       transform-origin: bottom center;
     }
 
@@ -82,7 +82,7 @@
 
     @keyframes hammering {
       0% { transform: rotate(0deg); }
-      50% { transform: rotate(-30deg); }
+      50% { transform: rotate(-25deg); }
       100% { transform: rotate(0deg); }
     }
   </style>
