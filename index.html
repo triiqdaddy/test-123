@@ -5,99 +5,83 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BL Construction Limited</title>
   <style>
-    body {
+    html, body {
       margin: 0;
+      padding: 0;
+      height: 100%;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #f57c00;
       color: #fff;
-      overflow-x: hidden;
+      overflow: hidden;
+    }
+
+    .container {
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      height: 100%;
+      text-align: center;
     }
 
     header {
       background-color: #0d47a1;
-      padding: 2em 1em;
-      text-align: center;
-      clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+      padding: 1em;
     }
 
     header h1 {
       margin: 0;
-      font-size: 2.8em;
-      animation: fadeInDown 1s ease-out;
+      font-size: 2.2em;
     }
 
     .main {
-      padding: 3em 1em;
-      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 1em;
     }
 
     .main p {
-      font-size: 1.2em;
-      margin: 0.5em 0;
-      animation: fadeInUp 1.2s ease-out;
+      margin: 0.3em 0;
+      font-size: 1em;
     }
 
     .hammer {
-      font-size: 6em;
-      margin: 1em 0;
+      font-size: 4em;
       animation: hammering 3s infinite ease-in-out;
       transform-origin: bottom center;
     }
 
     .loader {
-      width: 60px;
-      height: 60px;
-      border: 6px solid #fff;
-      border-top: 6px solid #0d47a1;
+      width: 40px;
+      height: 40px;
+      border: 5px solid #fff;
+      border-top: 5px solid #0d47a1;
       border-radius: 50%;
       animation: spin 1.5s linear infinite;
-      margin: 1em auto;
+      margin: 0.5em 0;
     }
 
     .countdown {
-      font-size: 1.5em;
-      margin-top: 1em;
+      font-size: 1em;
+      margin-top: 0.5em;
       background-color: #0d47a1;
-      padding: 1em;
-      border-radius: 10px;
-      display: inline-block;
-      animation: fadeIn 2s ease-out;
+      padding: 0.5em 1em;
+      border-radius: 8px;
     }
 
     .contact {
       background-color: #0d47a1;
-      padding: 2em;
-      color: #fff;
-      text-align: center;
-      clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 100%);
-    }
-
-    .contact h2 {
-      margin-top: 0;
+      padding: 0.8em;
+      font-size: 0.9em;
     }
 
     .contact p {
-      margin: 0.3em 0;
+      margin: 0.2em 0;
     }
 
     a {
       color: #ffcc80;
       text-decoration: none;
-    }
-
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
     }
 
     @keyframes spin {
@@ -113,33 +97,32 @@
   </style>
 </head>
 <body>
-  <header>
-    <h1>🚧 BL Construction Limited 🚧</h1>
-  </header>
+  <div class="container">
+    <header>
+      <h1>🚧 BL Construction Limited 🚧</h1>
+    </header>
 
-  <div class="main">
-    <p>Our site is currently under construction.</p>
-    <p>We're building something great — please check back soon!</p>
-    <div class="hammer">🔨</div>
-    <div class="loader"></div>
-
-    <div class="countdown">
-      <p><strong>Estimated Launch:</strong></p>
-      <p id="timer">Loading countdown...</p>
+    <div class="main">
+      <p>Our site is currently under construction.</p>
+      <p>We're building something great — please check back soon!</p>
+      <div class="hammer">🔨</div>
+      <div class="loader"></div>
+      <div class="countdown">
+        <p><strong>Estimated Launch:</strong> <span id="timer">Loading...</span></p>
+      </div>
     </div>
-  </div>
 
-  <div class="contact">
-    <h2>Contact Us</h2>
-    <p><strong>Email:</strong> <a href="mailto:mplopi@blconstruction.co.zm">mplopi@blconstruction.co.zm</a></p>
-    <p><strong>Phone:</strong> +260 977 7432747</p>
-    <p><strong>Address:</strong> Plot 10 Mwaleshi Road, Olympia, Lusaka</p>
+    <div class="contact">
+      <p><strong>Email:</strong> <a href="mailto:mplopi@blconstruction.co.zm">mplopi@blconstruction.co.zm</a></p>
+      <p><strong>Phone:</strong> +260 977 7432747</p>
+      <p><strong>Address:</strong> Plot 10 Mwaleshi Road, Olympia, Lusaka</p>
+    </div>
   </div>
 
   <script>
     const timerElement = document.getElementById("timer");
     const launchDate = new Date();
-    launchDate.setDate(launchDate.getDate() + 7); // 1 week from now
+    launchDate.setDate(launchDate.getDate() + 7);
 
     function updateCountdown() {
       const now = new Date().getTime();
